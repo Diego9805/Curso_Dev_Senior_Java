@@ -14,6 +14,9 @@ public class App {
             menu();
         }
 
+        int resultado = sumar(4, 3);
+        System.out.println("El resultado de la suma es: " + resultado);
+
     }
 
     public static void login() {
@@ -126,4 +129,8 @@ public class App {
 
     }
 
+    public static int sumar(int a, int b) {
+        int resultado = a + b;
+        return resultado;
+    }
 }
