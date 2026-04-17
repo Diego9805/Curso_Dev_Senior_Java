@@ -6,9 +6,8 @@ public class App {
     static int edad;
 
     public static void main(String[] args) throws Exception {
-
-        nombre = leerNombre(sc);
-        edad = leerEdad(sc);
+        String nombre = leerNombre(sc);
+        int edad = leerEdad(sc);
         boolean esMayor = esMayorA18(edad);
         imprimirRespuesta(esMayor, nombre);
     }
