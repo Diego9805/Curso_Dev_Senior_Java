@@ -2,13 +2,15 @@ import java.util.Scanner;
 
 public class App {
     static Scanner sc = new Scanner(System.in);
-    static String nombre="";
+    static String nombre = "";
     static int edad;
+
     public static void main(String[] args) throws Exception {
-        
+
         nombre = leerNombre(sc);
         edad = leerEdad(sc);
-        permitirAcceso(nombre, edad);
+        boolean esMayor = esMayorA18(edad);
+        imprimirRespuesta(esMayor, nombre);
     }
 
     public static String leerNombre(Scanner lector) {
@@ -24,9 +26,14 @@ public class App {
 
     }
 
-    public static void permitirAcceso( String nombre, int edad) {
-        if (edad >= 18) {
-            System.out.println("Hola " + nombre + ", acceso permitido");
+    public static boolean esMayorA18(int edad) {
+
+        return edad > 18;
+    }
+
+    public static void imprimirRespuesta(boolean esMayor, String nombre) {
+        if (esMayor) {
+            System.out.println("Bienvenido " + nombre + ", acceso permitido");
         } else {
             System.out.println("Acceso denegado");
         }
